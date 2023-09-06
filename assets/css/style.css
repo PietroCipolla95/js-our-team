@@ -3,5 +3,11 @@ body {
 }
 
 .height {
-    height: 160px;
+    height: 130px;
+}
+
+.card:hover {
+    transform: scale(1.1);
+    filter: opacity(.8);
+    transition: .4s;
 }

@@ -62,26 +62,39 @@ const ourTeam = [
 
 console.log(ourTeam);
 
+let input = document.querySelector('form')
 
-document.getElementById('add').addEventListener('click', function(ev) {
+input.addEventListener('submit', function(ev) {
 
-    ev.preventDefault();
     
+    ev.preventDefault(); 
+    
+    // "empty" object
     let newMember = {
-        name : '',
-        job: '',
-        pic : 'http://127.0.0.1:3002/index.html',
+        pic : 'https://picsum.photos/110/117.jpg',
     }
 
+    //get the value of name and job
     newMember.name = document.getElementById('name').value;
     newMember.job = document.getElementById('job').value;
 
+    //push the newMember in the ourTeam array
     ourTeam.push(newMember);
     console.log(ourTeam);
 
-    
+    //print the new card in the row
+    let domElement = document.querySelector('.row');
+    let domPrint = generateCard(0, 'div', newMember);
+    domElement.insertAdjacentHTML('beforeend', domPrint)
+
+
+    //reset form
+    document.getElementById('myForm').reset()
+        
 })
 
+
+//loop inside array
 for (let i = 0; i < ourTeam.length; i++) {
 
     const member = ourTeam[i];
@@ -99,9 +112,9 @@ function generateCard(number, el, member) {
 
     let card = `
     <div class="col-md-2">
-        <div class="card border border-5 border-info bg-info my-2">
+        <div class="card border border-5 border-info bg-info my-3">
             <img src="${member.pic}" class="card-img-top" alt="team member">
-            <div class="card-body height px-1 py-4">
+            <div class="card-body height px-1 py-4 d-flex flex-column justify-content-center">
                 <h5 class="card-title">${member.name}</h5>
                 <p class="card-text">${member.job}</p>
             </div>

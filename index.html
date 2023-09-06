@@ -8,30 +8,33 @@
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
-    <h1 class="text-center py-5 text-info fw-bolder">
+    <h1 class="text-center py-5 text-info fw-bolder"> <!-- Title -->
         Our Team
     </h1>
-    <div class="container">
+    <div class="container"> <!-- cards container -->
         <div class="row py-5 px-5 border border-3 rounded-5 border-info">
                      
         </div>
+        <div class="row py-5 px-5 border border-3 rounded-5 border-info my-4"> <!-- form to add team member -->
+            <h2 class="text-black px-5">
+                Add a new member to our team!
+            </h2>
+            <form class="row g-3 needs-validation ps-5 my-3" id="myForm">
+                <div class="col-md-4 text-black fw-semibold"> <!-- name -->
+                    <label for="name" class="form-label mb-3">Full name</label> 
+                    <input type="text" class="form-control" id="name"  required>
+                </div>
+                <div class="col-md-4 text-black fw-semibold"> <!-- job -->
+                    <label for="job" class="form-label mb-3">Job</label>
+                    <input type="text" class="form-control" id="job" required>
+                </div>
+                <div class="col-12"> <!-- submit -->
+                    <button class="btn btn-info fw-semibold" type="submit" id="add">Add Team Member</button>
+                </div>
+            </form>
+        </div>
 
-        <form class="row g-3 needs-validation ps-5 my-4" novalidate>
-            <div class="col-md-4">
-                <label for="name" class="form-label">Full name</label>
-                <input type="text" class="form-control" id="name"  required>
-            </div>
-            <div class="col-md-4">
-                <label for="job" class="form-label">Job</label>
-                <input type="text" class="form-control" id="job" required>
-            </div>
-            <div class="col-12">
-                <button class="btn btn-info" type="submit" id="add">Add Team Member</button>
-            </div>
-        </form>
     </div>
-
-    
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
