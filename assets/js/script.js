@@ -19,7 +19,6 @@ Organizzare i singoli membri in card/schede
 
 */
 
-
 const ourTeam = [
 
     {
@@ -79,8 +78,9 @@ for (let i = 0; i < ourTeam.length; i++) {
 
 function generateCard(number, el) {
 
-    let memberCard = document.createElement(el)       
-    
+    let memberCard = document.createElement(el)
+    memberCard.innerHTML = value    
+    return memberCard
     
 }
 
