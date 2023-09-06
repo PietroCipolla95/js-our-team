@@ -66,9 +66,22 @@ for (let i = 0; i < ourTeam.length; i++) {
 
         const value = member[key];
         console.log(value);
-            
+
+        
     }
-   
+    
+    const domEl = document.querySelector('.row')
+    let memberCard = generateCard(i + 1, 'span');
+    domEl.append(memberCard)
+
+}
+
+
+function generateCard(number, el) {
+
+    let memberCard = document.createElement(el)       
+    
+    
 }
 
 
