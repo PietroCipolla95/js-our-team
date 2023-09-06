@@ -61,7 +61,7 @@ for (let i = 0; i < ourTeam.length; i++) {
     const member = ourTeam[i];
     let memberDom = document.querySelector('.row');
     let domPrint = generateCard(i + 1, 'div', member);
-    memberDom.append(domPrint)
+    memberDom.insertAdjacentHTML('beforeend', domPrint)
    
 }
 
@@ -73,17 +73,15 @@ function generateCard(number, el, member) {
     //memberCard.innerHTML =  member.name + ' ' + member.job + ' ' + member.pic
 
     let finalCard = `
-    <div class="col-md-4">
-        <div class="card border border-5 border-info bg-info">
-            <img src="${member.pic}" class="card-img-top" alt="...">
-            <div class="card-body">
+    <div class="col-md-2">
+        <div class="card border border-5 border-info bg-info my-2">
+            <img src="${member.pic}" class="card-img-top" alt="team member">
+            <div class="card-body px-1 py-4">
                 <h5 class="card-title">${member.name}</h5>
                 <p class="card-text">${member.job}</p>
             </div>
         </div>
     </div> `
-
-
 
     return finalCard
     
