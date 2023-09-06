@@ -18,3 +18,49 @@ BONUS 2:
 Organizzare i singoli membri in card/schede
 
 */
+
+
+const ourTeam = [
+
+    {
+        name : 'Wayne Barnett',
+        job : 'Founder & CEO',
+        pic : '<img src="./assets/img/wayne-barnett-founder-ceo.jpg',
+    },
+    {
+        name : 'Angela Caroll',
+        job : 'Chief Editor',
+        pic : '<img src="./assets/img/angela-caroll-chief-editor.jpg',
+    },
+    {
+        name : 'Walter Gordon',
+        job : 'Office Manager',
+        pic : '<img src="./assets/img/walter-gordon-office-manager.jpg',
+    },
+    {
+        name : 'Angela Lopez',
+        job : 'Social Media Manager',
+        pic : '<img src="./assets/img/angela-lopez-social-media-manager.jpg',
+    },
+    {
+        name : 'Scott Estrada',
+        job : 'Developer',
+        pic : '<img src="./assets/img/scott-estrada-developer.jpg',
+    },
+    {
+        name : 'Barbara Ramos',
+        job : 'Graphic Designer',
+        pic : '<img src="./assets/img/barbara-ramos-graphic-designer.jpg',
+    },
+
+]
+
+console.log(ourTeam);
+
+for (const key in ourTeam) {
+
+    const values = ourTeam[key];
+    console.log(values);
+    
+}
+
