@@ -57,10 +57,18 @@ const ourTeam = [
 
 console.log(ourTeam);
 
-for (const key in ourTeam) {
+for (let i = 0; i < ourTeam.length; i++) {
 
-    const values = ourTeam[key];
-    console.log(values);
-    
+    const member = ourTeam[i];
+    console.log('-----');
+
+    for (const key in member) {
+
+        const value = member[key];
+        console.log(value);
+            
+    }
+   
 }
+
 
