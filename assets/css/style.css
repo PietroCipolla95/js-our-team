@@ -1,3 +1,7 @@
 body {
     background-color: rgb(25, 79, 129);
 }
+
+.height {
+    height: 160px;
+}

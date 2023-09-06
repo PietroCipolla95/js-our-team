@@ -19,6 +19,12 @@ Organizzare i singoli membri in card/schede
 
 */
 
+/* 
+
+Aggiungete un form in pagina per permettere all’utente di aggiungere nuovi membri del team: cliccando sul pulsante “add” viene creato un nuovo oggetto, il quale viene inserito nell’array iniziale e viene stampata una nuova card con tutte le informazioni inserite dall’utente.
+
+*/
+
 const ourTeam = [
 
     {
@@ -56,48 +62,53 @@ const ourTeam = [
 
 console.log(ourTeam);
 
+
+document.getElementById('add').addEventListener('click', function(ev) {
+
+    ev.preventDefault();
+    
+    let newMember = {
+        name : '',
+        job: '',
+        pic : 'http://127.0.0.1:3002/index.html',
+    }
+
+    newMember.name = document.getElementById('name').value;
+    newMember.job = document.getElementById('job').value;
+
+    ourTeam.push(newMember);
+    console.log(ourTeam);
+
+    
+})
+
 for (let i = 0; i < ourTeam.length; i++) {
 
     const member = ourTeam[i];
-    let memberDom = document.querySelector('.row');
+    let domElement = document.querySelector('.row');
     let domPrint = generateCard(i + 1, 'div', member);
-    memberDom.insertAdjacentHTML('beforeend', domPrint)
+    domElement.insertAdjacentHTML('beforeend', domPrint)
    
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 function generateCard(number, el, member) {
 
     //stampano in pagina le info
-    //let memberCard = document.createElement(el)
-    //memberCard.innerHTML =  member.name + ' ' + member.job + ' ' + member.pic
+        //let memberCard = document.createElement(el)
+        //memberCard.innerHTML =  member.name + ' ' + member.job + ' ' + member.pic
 
-    let finalCard = `
+    let card = `
     <div class="col-md-2">
         <div class="card border border-5 border-info bg-info my-2">
             <img src="${member.pic}" class="card-img-top" alt="team member">
-            <div class="card-body px-1 py-4">
+            <div class="card-body height px-1 py-4">
                 <h5 class="card-title">${member.name}</h5>
                 <p class="card-text">${member.job}</p>
             </div>
         </div>
     </div> `
 
-    return finalCard
+    return card
     
 }
 
