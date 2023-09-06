@@ -59,7 +59,7 @@ console.log(ourTeam);
 for (let i = 0; i < ourTeam.length; i++) {
 
     const member = ourTeam[i];
-    let memberDom = document.querySelector('section');
+    let memberDom = document.querySelector('.row');
     let domPrint = generateCard(i + 1, 'div', member);
     memberDom.append(domPrint)
    
@@ -68,9 +68,24 @@ for (let i = 0; i < ourTeam.length; i++) {
 
 function generateCard(number, el, member) {
 
-    let memberCard = document.createElement(el)
-    memberCard.innerHTML =  member.name + ' ' + member.job + ' ' + member.pic
-    return memberCard
+    //stampano in pagina le info
+    //let memberCard = document.createElement(el)
+    //memberCard.innerHTML =  member.name + ' ' + member.job + ' ' + member.pic
+
+    let finalCard = `
+    <div class="col-md-4">
+        <div class="card border border-5 border-info bg-info">
+            <img src="${member.pic}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">${member.name}</h5>
+                <p class="card-text">${member.job}</p>
+            </div>
+        </div>
+    </div> `
+
+
+
+    return finalCard
     
 }
 
