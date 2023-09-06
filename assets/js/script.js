@@ -66,6 +66,20 @@ for (let i = 0; i < ourTeam.length; i++) {
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function generateCard(number, el, member) {
 
     //stampano in pagina le info
